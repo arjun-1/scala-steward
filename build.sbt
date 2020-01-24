@@ -25,6 +25,7 @@ lazy val core = myCrossProject("core")
   .enablePlugins(BuildInfoPlugin, JavaAppPackaging, DockerPlugin)
   .settings(dockerSettings)
   .settings(
+    resolvers += Resolver.bintrayRepo("fthomas", "maven"),
     libraryDependencies ++= Seq(
       compilerPlugin(Dependencies.betterMonadicFor),
       compilerPlugin(Dependencies.kindProjector.cross(CrossVersion.full)),
